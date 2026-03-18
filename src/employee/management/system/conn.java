@@ -1,6 +1,6 @@
 package employee.management.system;
 
-import java.beans.Statement;
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -13,7 +13,7 @@ public class conn {
         try{
             Class.forName( "com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/employeemanagement","root", "123456789");
-            Statement statement = (Statement) connection.createStatement();
+            statement = (Statement) connection.createStatement();
             
         } catch (Exception e) {
             e.printStackTrace();
