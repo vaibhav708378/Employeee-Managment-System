@@ -1,5 +1,7 @@
 package employee.management.system;
 
+import com.toedter.calendar.JDateChooser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -51,7 +53,7 @@ public class AddEmployee extends JFrame implements ActionListener {
         add(dob);
 
         tdob = new JDateChooser();
-        tdob.setBounds(200, 200, 150, 30);
+        tdob.setBounds(200,200,150,30);
         tdob.setBackground(new Color(177,252,197));
         add(tdob);
 
@@ -165,7 +167,7 @@ public class AddEmployee extends JFrame implements ActionListener {
         if (e.getSource() == add){
             String name = tname.getText();
             String fname = tfname.getText();
-            String dob = ((JTextField) ((JDateChooser) tdob.getDateEditor()).getUiComponent()).getText();
+            String dob = ((JTextField) tdob.getDateEditor().getUiComponent()).getText();
             String salary = tsalary.getText();
             String address = taddress.getText();
             String aadhar = taadhar.getText();
@@ -178,7 +180,7 @@ public class AddEmployee extends JFrame implements ActionListener {
             try{
                 conn c = new conn();
                 String query = "insert into employee values('"+name+"', '"+fname+"', '"+dob+"', '"+salary+"','"+address+"', '"+phone+"', '"+email+"', '"+education+"', '"+designation+"','"+aadhar+"', '"+empID+"')";
-                c.statement.executeQuery(query);
+                c.statement.executeUpdate(query);
                 JOptionPane.showMessageDialog(null,"Details added successfully");
                 setVisible(false);
                 new Main_class();

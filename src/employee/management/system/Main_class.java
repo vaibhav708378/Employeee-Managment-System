@@ -53,7 +53,8 @@ public class Main_class extends JFrame {
         rem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              
+              new RemoveEmployee();
+              setVisible(false);
             }
         });
         img.add(rem);
