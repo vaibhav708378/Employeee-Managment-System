@@ -1,11 +1,12 @@
 package employee.management.system;
 
+import net.proteanit.sql.DbUtils;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-import net.proteanit.sql.DbUtil;
 
 public class View_Employee extends JFrame implements ActionListener {
 
@@ -35,7 +36,7 @@ public class View_Employee extends JFrame implements ActionListener {
 
         table = new JTable();
         try{
-            conn c= new conn();
+            conn c = new conn();
             ResultSet resultSet = c.statement.executeQuery("select * from employee");
             table.setModel(DbUtils.resultSetToTableModel(resultSet));
         }catch (Exception e){
