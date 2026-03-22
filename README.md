@@ -35,16 +35,6 @@ Employee-Management-System
 └── .gitignore
 
 
-## 🚧 Under Development
-
-This project is currently under development. Additional features and improvements are being planned, such as:
-
-* Database integration (MySQL)
-* Login and authentication system
-* Graphical User Interface (GUI)
-* Advanced employee search and filtering
-* Report generation
-
 ## 📖 Learning Objectives
 
 This project helps in understanding:
